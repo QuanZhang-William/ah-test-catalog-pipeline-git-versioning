@@ -3,7 +3,7 @@ kind: Pipeline
 metadata:
   name: git-demo-pipeline
   labels:
-    app.kubernetes.io/version: "0.1"
+    app.kubernetes.io/version: "0.2"
   annotations:
     tekton.dev/pipelines.minVersion: "0.17.0"
     tekton.dev/tags: git
@@ -20,5 +20,5 @@ spec:
         image: alpine
         script: |
           #!/bin/sh
-          echo "Hello World git-demo-pipeline V1"   
+          echo "Hello World git-demo-pipeline V2"   
     
