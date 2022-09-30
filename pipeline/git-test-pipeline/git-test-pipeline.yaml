@@ -1,0 +1,24 @@
+apiVersion: tekton.dev/v1beta1
+kind: Pipeline
+metadata:
+  name: git-demo-pipeline
+  labels:
+    app.kubernetes.io/version: "0.1"
+  annotations:
+    tekton.dev/pipelines.minVersion: "0.17.0"
+    tekton.dev/tags: git
+    tekton.dev/displayName: "git demo pipeline"
+    tekton.dev/platforms: "linux/amd64"
+spec:
+  description: >-
+    This is a test task following git-based versioning
+  tasks:
+  - name: task1
+    taskSpec:
+      steps:
+      - name: echo
+        image: alpine
+        script: |
+          #!/bin/sh
+          echo "Hello World git-demo-pipeline V1"   
+    
